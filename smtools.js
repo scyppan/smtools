@@ -1,0 +1,63 @@
+function buildplayerattributes(pos1, pos2, pos3, pos4, ovr, age){
+	let attr=setinitialatttributes(ovr);
+	attr = gkadjustment(pos1, pos2, pos3, pos4, ovr, attr);
+	attr = getattributesforpos(pos4, ovr, attr);
+	attr = getattributesforpos(pos3, ovr, attr);
+	attr = getattributesforpos(pos2, ovr, attr);
+	attr = getattributesforpos(pos1, ovr, attr);
+	
+    attr = rectifyovr(pos1, attr, ovr); 
+
+    attr.overallrating=ovr;
+    attr.potential= getpotential(age, ovr, pos1, pos2, pos3, pos4);
+
+    attr.preferredposition1=pos1 || 14;
+    attr.preferredposition2=pos2 || -1;
+    attr.preferredposition3=pos3 || -1;
+    attr.preferredposition4=pos4 || -1;
+
+	return attr;
+}
+
+function buildplayerappearances(gender, nationname){
+
+    let nation = nations().find(n=>n.nation==nationname);
+    if(!nation){
+        return nations()[145];
+    }
+
+	let skintone = getskintone(nation);
+
+	let appearance = {
+		skintonecode: skintone,
+		haircolorcode: gethaircolor(skintone, nation),
+		facialhairtypecode: getfacialhairtype(gender),
+		headtypecode: getheadtypecode(nation),
+		hairtypecode: gethairtypecode(),
+		shoe: getshoe(),
+		gkglove: getgkglove(),
+        skintypecode: 0,
+        sideburnscode: 0,
+        eyebrowcode: geteyebrowcode()||0,
+        eyecolorcode: geteyecolorcode(skintone)||8,
+        gender: gender || 0
+	}
+
+	return appearance;
+}
+
+function builddemographics(height, weight, birthdate, foot, weakfoot, ovr){
+    
+   let demo={
+        height: height || 180,
+        weight: weight || 75,
+        birthdate: getfifabirthdateval(birthdate) || 141428,
+        internationalrep: getinternationalrep(ovr) || 1 ,
+        foot: getfoot(foot) || 1,
+        personality: randbetween(1,5) || 3,
+        weakfootabilitytypecode: weakfoot || 2
+    };
+
+    return demo;
+
+}
