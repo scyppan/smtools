@@ -42,6 +42,7 @@ function buildplayerappearances(gender, nationname){
         eyecolorcode: geteyecolorcode(skintone)||8,
         gender: gender || 0
 	}
+    appearance.facialhaircolorcode=appearance.haircolorcode;
 
 	return appearance;
 }
@@ -53,7 +54,7 @@ function builddemographics(height, weight, birthdate, foot, weakfoot, ovr){
         weight: weight || 75,
         birthdate: getfifabirthdateval(birthdate) || 141428,
         internationalrep: getinternationalrep(ovr) || 1 ,
-        foot: getfoot(foot) || 1,
+        preferredfoot: getfoot(foot) || 1,
         personality: randbetween(1,5) || 3,
         weakfootabilitytypecode: getweakfoot(weakfoot) || 2
     };
