@@ -5,9 +5,9 @@ function buildplayerattributes(pos1, pos2, pos3, pos4, ovr, age){
 	attr = getattributesforpos(pos3, ovr, attr);
 	attr = getattributesforpos(pos2, ovr, attr);
 	attr = getattributesforpos(pos1, ovr, attr);
-	
-    attr = rectifyovr(pos1, attr, ovr); 
 
+    attr = rectifyovr(pos1, attr, ovr);
+    
     attr.overallrating=ovr;
     attr.potential= getpotential(age, ovr, pos1, pos2, pos3, pos4);
 

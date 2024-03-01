@@ -1,3 +1,7 @@
+
+
+
+
 function setinitialatttributes(ovr){
 	let attributes={
 	curve: baseval(ovr),
@@ -353,6 +357,8 @@ function rectifyovr(pos1, attr, targetovr){
           attr=adjustsingleattrval(attr, pos1, 1); 
         }
     }
+
+    return attr;
   }
 
 function calculateovr(pos1, attr){
@@ -408,3 +414,11 @@ function getpotential(age, ovr, pos1, pos2, pos3, pos4){
       default: return ovr;
     }
   }
+
+function getovrfromtemplate(ovr,transfervalue){
+    if(ovr){return ovr;}else{
+        let record=transfervaluestoovr().find(x=>x.transfervalue==transfervalue);
+
+        let ovr=randbetween(record.lo, record.hi);
+    }
+}
