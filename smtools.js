@@ -55,9 +55,21 @@ function builddemographics(height, weight, birthdate, foot, weakfoot, ovr){
         internationalrep: getinternationalrep(ovr) || 1 ,
         foot: getfoot(foot) || 1,
         personality: randbetween(1,5) || 3,
-        weakfootabilitytypecode: weakfoot || 2
+        weakfootabilitytypecode: getweakfoot(weakfoot) || 2
     };
 
     return demo;
 
+}
+
+function parsetemplateplayer(player){//pass player as an obj
+    player.finovr=getovrfromtemplate(player.ovr,player.transfervalue) || 60; 
+    player.age=calculateage(player.birthdate, "2023-09-27"); 
+
+    player.pos1=getpositionid(player.pos1, true);
+    player.pos2=getpositionid(player.pos2, false);
+    player.pos3=getpositionid(player.pos3, false);
+    player.pos4=getpositionid(player.pos4, false);
+
+    return player;
 }

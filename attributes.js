@@ -422,3 +422,16 @@ function getovrfromtemplate(ovr,transfervalue){
         let ovr=randbetween(record.lo, record.hi);
     }
 }
+
+function getpositionid(pos, primary){
+    let position = positions().find(x=>x.position==pos);
+    
+    if(position){return position.id;}
+    
+    if(primary){
+        return 14;
+    }else{
+        return -1;
+    }
+    
+}
