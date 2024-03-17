@@ -11,10 +11,10 @@ function buildplayerattributes(pos1, pos2, pos3, pos4, ovr, age){
     attr.overallrating=ovr;
     attr.potential= getpotential(age, ovr, pos1, pos2, pos3, pos4);
 
-    attr.preferredposition1=pos1 || 14;
-    attr.preferredposition2=pos2 || -1;
-    attr.preferredposition3=pos3 || -1;
-    attr.preferredposition4=pos4 || -1;
+    attr.preferredposition1=pos1 ?? 14;
+    attr.preferredposition2=pos2 ?? -1;
+    attr.preferredposition3=pos3 ?? -1;
+    attr.preferredposition4=pos4 ?? -1;
 
 	return attr;
 }

@@ -1,7 +1,3 @@
-
-
-
-
 function setinitialatttributes(ovr){
 	let attributes={
 	curve: baseval(ovr),
