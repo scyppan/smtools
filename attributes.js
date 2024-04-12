@@ -358,30 +358,30 @@ function rectifyovr(pos1, attr, targetovr){
   }
 
 function calculateovr(pos1, attr){
-    let pos=setmap(pos1);
+      let pos=setmap(pos1);
       switch (pos) {
-          case 0:
+        case 0:
               return Math.round(attr.reactions * 0.11 + attr.gkdiving * 0.21 + attr.gkhandling * 0.21 + attr.gkkicking * 0.05 + attr.gkpositioning * 0.21 + attr.gkreflexes * 0.21);
-          case 2:
+        case 2:
               return Math.round(attr.crossing * 0.12 + attr.shortpassing * 0.10 + attr.defensiveawareness * 0.07 + attr.standingtackle * 0.08 + attr.slidingtackle * 0.11 + attr.dribbling * 0.04 + attr.ballcontrol * 0.08 + attr.stamina * 0.1 + attr.acceleration * 0.04 + attr.sprintspeed * 0.06 + attr.reactions * 0.08 + attr.interceptions * 0.12);
-          case 3:
+        case 3:
               return Math.round(attr.crossing * 0.09 + attr.headingaccuracy * 0.04 + attr.shortpassing * 0.07 + attr.defensiveawareness * 0.08 + attr.standingtackle * 0.11 + attr.slidingtackle * 0.14 + attr.ballcontrol * 0.07 + attr.stamina * 0.08 + attr.acceleration * 0.05 + attr.sprintspeed * 0.07 + attr.reactions * 0.08 + attr.interceptions * 0.12);
-          case 5:
+        case 5: 
               return Math.round(attr.headingaccuracy * 0.10 + attr.shortpassing * 0.05 + attr.defensiveawareness * 0.14 + attr.standingtackle * 0.17 + attr.slidingtackle * 0.10 + attr.ballcontrol * 0.04 + attr.jumping * 0.03 + attr.strength * 0.10 + attr.sprintspeed * 0.02 + attr.reactions * 0.05 + attr.aggression * 0.07 + attr.interceptions * 0.13);
-          case 10:
-              return Math.round(attr.shortpassing * 0.14 + attr.defensiveawareness * 0.09 + attr.standingtackle * 0.12 + attr.slidingtackle * 0.05 + attr.longpassing * 0.10 + attr.ballcontrol * 0.10 + attr.stamina * 0.06 + attr.strength * 0.04 + attr.reactions * 0.07 + attr.aggression * 0.10 + attr.interceptions * 0.13 + attr.vision * 0.08);
-          case 12:
-              return Math.round(attr.crossing * 0.12 + attr.finishing * 0.12 + attr.shortpassing * 0.10 + attr.dribbling * 0.12 + attr.longpassing * 0.10 + attr.ballcontrol * 0.10 + attr.stamina * 0.06 + attr.acceleration * 0.04 + attr.sprintspeed * 0.06 + attr.reactions * 0.08 + attr.positioning * 0.12 + attr.vision * 0.08);
-          case 14:
-              return Math.round(attr.finishing * 0.12 + attr.shortpassing * 0.10 + attr.standingtackle * 0.12 + attr.dribbling * 0.12 + attr.longpassing * 0.10 + attr.ballcontrol * 0.10 + attr.stamina * 0.06 + attr.longshots * 0.12 + attr.reactions * 0.08 + attr.interceptions * 0.12 + attr.positioning * 0.12 + attr.vision * 0.08);
-          case 18:
-              return Math.round(attr.finishing * 0.12 + attr.shortpassing * 0.10 + attr.dribbling * 0.12 + attr.longpassing * 0.10 + attr.ballcontrol * 0.10 + attr.longshots * 0.12 + attr.acceleration * 0.04 + attr.sprintspeed * 0.06 + attr.agility * 0.08 + attr.reactions * 0.08 + attr.positioning * 0.12 + attr.vision * 0.08);
-          case 21:
-              return Math.round(attr.finishing * 0.12 + attr.headingaccuracy * 0.12 + attr.shortpassing * 0.10 + attr.volleys * 0.12 + attr.dribbling * 0.12 + attr.ballcontrol * 0.10 + attr.shotpower * 0.12 + attr.acceleration * 0.04 + attr.sprintspeed * 0.06 + attr.reactions * 0.08 + attr.positioning * 0.12 + attr.vision * 0.08);
-          case 23:
-              return Math.round(attr.crossing * 0.12 + attr.finishing * 0.12 + attr.shortpassing * 0.10 + attr.dribbling * 0.12 + attr.ballcontrol * 0.10 + attr.longshots * 0.12 + attr.acceleration * 0.04 + attr.sprintspeed * 0.06 + attr.agility * 0.08 + attr.reactions * 0.08 + attr.positioning * 0.12 + attr.vision * 0.08);
-          case 25:
-              return Math.round(attr.finishing * 0.12 + attr.headingaccuracy * 0.12 + attr.shortpassing * 0.10 + attr.volleys * 0.12 + attr.dribbling * 0.12 + attr.ballcontrol * 0.10 + attr.shotpower * 0.12 + attr.strength * 0.12 + attr.longshots * 0.12 + attr.acceleration * 0.04 + attr.sprintspeed * 0.06 + attr.reactions * 0.08 + attr.positioning * 0.12 + attr.vision * 0.08);
+        case 10: // CDM
+            return Math.round(attr.shortpassing * 0.14 + attr.defensiveawareness * 0.09 + attr.standingtackle * 0.12 + attr.slidingtackle * 0.05 + attr.longpassing * 0.10 + attr.ballcontrol * 0.10 + attr.stamina * 0.06 + attr.strength * 0.04 + attr.reactions * 0.07 + attr.aggression * 0.05 + attr.interceptions * 0.14 + attr.vision * 0.04);
+        case 12: // RM
+            return Math.round(attr.crossing * 0.10 + attr.finishing * 0.06 + attr.shortpassing * 0.11 + attr.dribbling * 0.15 + attr.longpassing * 0.05 + attr.ballcontrol * 0.13 + attr.stamina * 0.05 + attr.acceleration * 0.07 + attr.sprintspeed * 0.06 + attr.reactions * 0.07 + attr.positioning * 0.08 + attr.vision * 0.07);
+        case 14: // CM
+            return Math.round(attr.finishing * 0.02 + attr.shortpassing * 0.17 + attr.dribbling * 0.07 + attr.longpassing * 0.13 + attr.ballcontrol * 0.14 + attr.stamina * 0.06 + attr.strength * 0.04 + attr.longshots * 0.04 + attr.reactions * 0.08 + attr.interceptions * 0.05 + attr.positioning * 0.06 + attr.vision * 0.13);
+        case 18: // CAM
+            return Math.round(attr.finishing * 0.07 + attr.shortpassing * 0.16 + attr.dribbling * 0.13 + attr.longpassing * 0.04 + attr.ballcontrol * 0.15 + attr.longshots * 0.05 + attr.acceleration * 0.04 + attr.sprintspeed * 0.03 + attr.agility * 0.03 + attr.reactions * 0.07 + attr.positioning * 0.09 + attr.vision * 0.14);
+        case 21: // CF
+            return Math.round(attr.finishing * 0.11 + attr.headingaccuracy * 0.02 + attr.shortpassing * 0.09 + attr.dribbling * 0.14 + attr.ballcontrol * 0.15 + attr.shotpower * 0.05 + attr.longshots * 0.04 + attr.acceleration * 0.05 + attr.sprintspeed * 0.05 + attr.reactions * 0.09 + attr.positioning * 0.13 + attr.vision * 0.08);
+        case 23: // RW
+            return Math.round(attr.crossing * 0.09 + attr.finishing * 0.10 + attr.shortpassing * 0.09 + attr.dribbling * 0.16 + attr.ballcontrol * 0.14 + attr.longshots * 0.04 + attr.acceleration * 0.07 + attr.sprintspeed * 0.06 + attr.agility * 0.03 + attr.reactions * 0.07 + attr.positioning * 0.09 + attr.vision * 0.06);
+        case 25: // ST
+            return Math.round(attr.finishing * 0.18 + attr.headingaccuracy * 0.10 + attr.shortpassing * 0.05 + attr.volleys * 0.02 + attr.dribbling * 0.07 + attr.ballcontrol * 0.10 + attr.shotpower * 0.10 + attr.strength * 0.05 + attr.longshots * 0.03 + attr.acceleration * 0.04 + attr.sprintspeed * 0.05 + attr.reactions * 0.08 + attr.positioning * 0.13);
       }
   }   
 
