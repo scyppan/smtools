@@ -118,7 +118,7 @@ function nations(){
         {nation: "Central African Republic",	toptier:1,	nationstartingfirstletter:1,	groupid:30,	isocountry:"CF",	nationid:105,	asn:0,	lt:0,	md:0,	dk:100},
         {nation: "Chad",	toptier:1,	nationstartingfirstletter:1,	groupid:43,	isocountry:"TD",	nationid:106,	asn:0,	lt:0,	md:0,	dk:100},
         {nation: "Congo",	toptier:1,	nationstartingfirstletter:1,	groupid:29,	isocountry:"CG",	nationid:107,	asn:0,	lt:0,	md:11,	dk:89},
-        {nation: "Côte d'Ivoire",	toptier:1,	nationstartingfirstletter:1,	groupid:31,	isocountry:"CI",	nationid:108,	asn:0,	lt:0,	md:0,	dk:100},
+        {nation: "Côte d’Ivoire",	toptier:1,	nationstartingfirstletter:1,	groupid:31,	isocountry:"CI",	nationid:108,	asn:0,	lt:0,	md:0,	dk:100},
         {nation: "Djibouti",	toptier:1,	nationstartingfirstletter:1,	groupid:51,	isocountry:"DJ",	nationid:109,	asn:0,	lt:0,	md:0,	dk:100},
         {nation: "Congo DR",	toptier:1,	nationstartingfirstletter:1,	groupid:42,	isocountry:"CD",	nationid:110,	asn:0,	lt:0,	md:4,	dk:96},
         {nation: "Egypt",	toptier:1,	nationstartingfirstletter:1,	groupid:37,	isocountry:"EG",	nationid:111,	asn:0,	lt:5,	md:95,	dk:0},
