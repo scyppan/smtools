@@ -28,10 +28,8 @@ function buildplayerappearances(gender, nationname){
 
 	let skintone = getskintone(nation);
 
-    console.log("skintone", skintone);
-
 	let appearance = {
-		skintonecode: skintone || 99,
+		skintonecode: skintone || 5,
 		haircolorcode: gethaircolor(skintone, nation),
 		facialhairtypecode: getfacialhairtype(gender),
 		headtypecode: getheadtypecode(nation),
