@@ -28,6 +28,8 @@ function buildplayerappearances(gender, nationname){
         nation= nations()[145];
     }
 
+    
+
     console.log("I found nation", nation);
 
 	let skintone = getskintone(nation);
