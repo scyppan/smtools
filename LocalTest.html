@@ -1,8 +1,58 @@
-<meta charset="UTF-8">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Select Nation</title>
+    <script src="https://cdn.jsdelivr.net/gh/scyppan/scyppan@v0.0.34/scyppan.js" defer></script>
+    <script src="smtools.js" defer></script>
+    <script src="resources.js" defer></script>
+    <script src="appearance.js" defer></script>
+    <script src="attributes.js" defer></script>
+    <script src="demographics.js" defer></script>
+</head>
+<body>
+    <select id="nationSelect">
+        <!-- Options will be added here by JavaScript -->
+    </select>
+    <div id="appearanceOutput"></div>
 
-<script src="https://cdn.jsdelivr.net/gh/scyppan/scyppan@v0.0.34/scyppan.js" defer></script>
-<script src="smtools.js" defer></script>
-<script src="resources.js" defer></script>
-<script src="appearance.js" defer></script>
-<script src="attributes.js" defer></script>
-<script src="demographics.js" defer></script>
+    <script src="nations.js"></script>
+    <script>
+         // Ensure the DOM is fully parsed
+    document.addEventListener('DOMContentLoaded', function() {
+        const selectElement = document.getElementById('nationSelect');
+        const outputDiv = document.getElementById('appearanceOutput');
+        const nationsList = nations();
+
+        // Populate the select with options
+        nationsList.forEach(nation => {
+            const option = document.createElement('option');
+            option.value = nation.nationid; // setting the value to nationid for identification
+            option.text = nation.nation; // the text that will display
+            selectElement.appendChild(option);
+        });
+
+        // Event listener for when the user changes the selected option
+        selectElement.addEventListener('change', function() {
+            const selectedNation = this.options[this.selectedIndex].text;
+            console.log('Selected nation:', selectedNation); // Logging the selected nation name
+
+            // Assuming gender is determined elsewhere or is static
+            const gender = 'male'; // Or dynamically determine gender
+            const appearance = buildplayerappearances(gender, selectedNation);
+
+            // Format and display each property in the appearance object
+            let content = '<ul>';
+            for (const key in appearance) {
+                content += `<li><strong>${key}:</strong> ${appearance[key]}</li>`;
+            }
+            content += '</ul>';
+
+            // Update the content of the 'appearanceOutput' div
+            outputDiv.innerHTML = content;
+        });
+    });
+
+    </script>
+</body>
+</html>
