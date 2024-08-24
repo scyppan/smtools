@@ -29,13 +29,14 @@ function buildplayerappearances(gender, nationname){
 	let skintone = getskintone(nation);
 
 	let appearance = {
-		skintypecode: skintone,
+		skintonecode: skintone,
 		haircolorcode: gethaircolor(skintone, nation),
 		facialhairtypecode: getfacialhairtype(gender),
 		headtypecode: getheadtypecode(nation),
 		hairtypecode: gethairtypecode(),
 		shoe: getshoe(),
 		gkglove: getgkglove(),
+        skintypecode: 0,
         sideburnscode: 0,
         eyebrowcode: geteyebrowcode()||0,
         eyecolorcode: geteyecolorcode(skintone)||8,
