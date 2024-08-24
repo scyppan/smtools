@@ -21,10 +21,14 @@ function buildplayerattributes(pos1, pos2, pos3, pos4, ovr, age){
 
 function buildplayerappearances(gender, nationname){
 
+    console.log("I'm receiving nationname", nationname);
+
     let nation = nations().find(n=>n.nation==nationname);
     if(!nation){
         nation= nations()[145];
     }
+
+    console.log("I found nation", nation);
 
 	let skintone = getskintone(nation);
 
