@@ -6,66 +6,64 @@ function getskintone(nation){
     let lightthresh = nation.lt;
     let medthresh = lightthresh + nation.md;
     let darkthresh = medthresh + nation.dk;
+
+    //console.log("nation for skintone", nation);
+    //console.log("threshs", lightthresh, medthresh, darkthresh);
+    //console.log("the rand value", rand);
+
+    if(rand<lightthresh){tone=randbetween(1,3)} 
+    else if (rand<medthresh){tone = randbetween(3,7)}
+    else if (rand<darkthresh){tone = randbetween(7,10)}
     
-    if(rand<lightthresh){tone=randbetween(1,3);}
-    if(rand>lightthresh && rand<medthresh){tone=randbetween(3,7);}
-    if(rand>medthresh && rand<darkthresh){tone=randbetween(7,10);}
-    
-    if(tone===undefined){tone=3;}
-    
-      return tone;
+    //console.log("selected tone", 3);
+    return tone || 3;
+
   }
   
-  function gethaircolor(skintone, nation){
-  
-      if(nation.light<50){
-        if(skintone>=7){return 1;}
-      if(skintone>=4){
-          let tonearrays = [1,3];
-        return tonearrays[randbetween(0,1)];    
-      }else{
-          let tonearrays = [1,3,5,6];
-        return tonearrays[randbetween(0,3)];
-      }
+  function gethaircolor(skintone){
+
+    // 0 -> Black
+    // 1 -> Blonde
+    // 2 -> Ash Blonde
+    // 3 -> Dark Brown
+    // 4 -> Platinum Blonde
+    // 5 -> Light Brown
+    // 6 -> Brown
+    // 7 -> Red
+    // 8 -> White
+    // 9 -> Gray
+    // 10 -> Green
+    // 11 -> Electric Blue
+
+    let tonearray=[0,6];
+
+    switch(skintone){
+      case 0:
+      case 1:
+      case 2:
+        tonearray = [0,1,1,3,3,3,5,5,5,6,6,6,6,0,1,1,3,3,3,5,5,5,6,6,6,6,0,1,1,3,3,3,5,5,5,6,6,6,6,7];
+      break;
+      case 3: 
+      case 4:
+      case 5:
+      case 6:
+        tonearray = [0,3,6];
+      break;
     }
-  
-      let temphairtone = 5
-    
-      switch(skintone){
-        case 1: temphairtone = randbetween(0,5); break;
-        case 2: temphairtone = randbetween(0,5); break;
-        case 3: temphairtone = randbetween(0,5); break;
-        case 4: temphairtone = randbetween(0,4); break;
-        case 5: temphairtone = randbetween(0,4); break;
-        case 6: temphairtone = randbetween(0,3); break;
-        case 7: temphairtone = randbetween(0,2); break;
-        case 8: temphairtone = randbetween(0,1); break;
-        case 9: temphairtone = 0; break;
-        case 10: temphairtone = 0; break;
-      
-    }
-    
-    //the temphairtone above is not the correct FIFA ID for the shade of darkness intended. Must be converted. 
-     let hairtone = 1;
-    switch(temphairtone){
-        case 0: hairtone=1; break;
-      case 1: hairtone=3; break;
-      case 2: hairtone=6; break;
-      case 3: hairtone=5; break;
-      case 4: hairtone=2; break;
-      case 5: hairtone=4; break;
-    }
-    return hairtone;
+    //console.log(tonearray);
+    let haircolor = tonearray[randbetween(0,tonearray.length-1)] || 0;    
+    //console.log("skintone", skintone, "Haircolor", haircolor);
+
+    return haircolor;
+
   }
   
   function getfacialhairtype(gender){
       if(gender==2||randbetween(1,100)<85){
         return 0
     }else{
-        let typernd = randbetween(1,20);
-      if(typernd==19){return 28;}else{
-      return typernd;
-      }
+      let facialhairarray=[3,5,8,9,11,12,14,15,17,19,20];
+      return facialhairarray[randbetween(0,facialhairarray.length-1)];
     }
   }
   
@@ -82,9 +80,23 @@ function getskintone(nation){
     return headid;
   }
   
-  function gethairtypecode(){
-      let hairtypecodes = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,95,96,97,98,99,100,101,102,103,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,125,126,127,129,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,204,205,206,207,208,209,211,212,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,243,244,245,250,257,263,264,265,267,268,273,274,275,276,277,278,279,280,281,283,284,285,286,289,290,291,292,293,294,295,296,297,298,299,376,386,390,394,419,432,433,434,435,436,437,445,446,450,451,452,460,461,500,501,502,503,504,505,506,507,508,510,511,512,513,515,517,518,519,520,522,524,525,526,527,528,530,531,532,533,534,535,536,537,538,539,540,543,544,546,547,548,549,550,551,552,553,554,555,556,558,559,560,561,562,563,564,565,566,567,568,569,570,571,572,573,574,575,576,577,578,579,580,581,582,583,584,586,587,596,597,599,600,601,603,607,612,614,615,616,617,619,620,621,624,625,627,630,631,632,633,634,635,636,637,638,639,640,641,642,643,644,645,646,647,648,649,650,651,652,653,654,655,656,657,659,660,661,662,664,665,666,667,668,673,677,683,685,688,691,692,693,694,695,816,901,902,909,915,916,923,924,925];
-      return hairtypecodes[randbetween(0,hairtypecodes.length-1)];
+  function gethairtypecode(skintone){
+
+      let common=[18, 65,77,93,184];
+      let rare=[2,16,17,24,28,54,57,58,60,63,64,82,85,115,123,131,133,145,169,179,220,283,284,298,554,902];
+
+      if(skintone>=7){
+        rare=[...rare, ...[4,5,27,71,110,664]];
+      }
+    
+      let hairtypecode=common[randbetween(0,common.length-1)]||18;
+      
+      if(randbetween(1,100)>95){
+        console.log("get rare hairtypecode");
+        hairtypecode=rare[randbetween(0,rare.length-1)]||18;
+      }
+      
+      return hairtypecode;
     }
 
   function geteyebrowcode(){
@@ -109,4 +121,24 @@ function getskintone(nation){
     let arr = [73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,100,102,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,126];
     let glove = arr[randbetween(0,arr.length-1)];
     return glove;
+  }
+
+  function getfacialhaircolor(haircolor){
+    
+    switch(haircolor){
+      case 0: return 0;
+      case 1: return 5;
+      case 2: return 5;
+      case 3: return 6;
+      case 4: return 5;
+      case 5: return 6;
+      case 6: return 6;
+      case 7: return 7;
+      case 8: return 5;
+      case 9: return 5;
+      case 10: return 6;
+      case 11: return 6;
+
+    }
+
   }

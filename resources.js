@@ -12,11 +12,11 @@
 function nations(){
     return [									
         {nation: "Albania",	toptier:1,	nationstartingfirstletter:1,	groupid:13,	isocountry:"AL",	nationid:1,	asn:0,	lt:54,	md:46,	dk:0},
-        {nation: "Andorra",	toptier:1,	nationstartingfirstletter:1,	groupid:28,	isocountry:"AD",	nationid:2,	asn:0,	lt:33,	md:67,	dk:0},
-        {nation: "Armenia",	toptier:1,	nationstartingfirstletter:1,	groupid:14,	isocountry:"AM",	nationid:3,	asn:0,	lt:27,	md:73,	dk:0},
+        {nation: "Andorra",	toptier:1,	nationstartingfirstletter:1,	groupid:28,	isocountry:"AD",	nationid:2,	asn:0,	lt:95,	md:5,	dk:0},
+        {nation: "Armenia",	toptier:1,	nationstartingfirstletter:1,	groupid:14,	isocountry:"AM",	nationid:3,	asn:0,	lt:95,	md:5,	dk:0},
         {nation: "Austria",	toptier:1,	nationstartingfirstletter:1,	groupid:15,	isocountry:"AT",	nationid:4,	asn:0,	lt:71,	md:16,	dk:13},
         {nation: "Azerbaijan",	toptier:1,	nationstartingfirstletter:1,	groupid:16,	isocountry:"AZ",	nationid:5,	asn:0,	lt:55,	md:45,	dk:0},
-        {nation: "Belarus",	toptier:1,	nationstartingfirstletter:1,	groupid:4,	isocountry:"BY",	nationid:6,	asn:0,	lt:33,	md:67,	dk:0},
+        {nation: "Belarus",	toptier:1,	nationstartingfirstletter:1,	groupid:4,	isocountry:"BY",	nationid:6,	asn:0,	lt:90,	md:10,	dk:0},
         {nation: "Belgium",	toptier:1,	nationstartingfirstletter:1,	groupid:18,	isocountry:"BE",	nationid:7,	asn:0,	lt:39,	md:15,	dk:46},
         {nation: "Bosnia and Herzegovina",	toptier:1,	nationstartingfirstletter:1,	groupid:19,	isocountry:"BA",	nationid:8,	asn:0,	lt:84,	md:16,	dk:0},
         {nation: "Bulgaria",	toptier:1,	nationstartingfirstletter:1,	groupid:21,	isocountry:"BG",	nationid:9,	asn:0,	lt:75,	md:12,	dk:13},

@@ -27,13 +27,16 @@ function buildplayerappearances(gender, nationname){
     }
 
 	let skintone = getskintone(nation);
+    let haircolor=gethaircolor(skintone);
+    let facialhaircolor=getfacialhaircolor(haircolor);
 
 	let appearance = {
 		skintonecode: skintone || 5,
-		haircolorcode: gethaircolor(skintone, nation),
-		facialhairtypecode: getfacialhairtype(gender),
+		haircolorcode: haircolor,
+		facialhaircolorcode: facialhaircolor,
+        facialhairtypecode: getfacialhairtype(gender),
 		headtypecode: getheadtypecode(nation),
-		hairtypecode: gethairtypecode(),
+		hairtypecode: gethairtypecode(skintone),
 		shoe: getshoe(),
 		gkglove: getgkglove(),
         skintypecode: 0,
@@ -42,7 +45,6 @@ function buildplayerappearances(gender, nationname){
         eyecolorcode: geteyecolorcode(skintone)||8,
         gender: gender || 0
 	}
-    appearance.facialhaircolorcode=appearance.haircolorcode;
 
 	return appearance;
 }

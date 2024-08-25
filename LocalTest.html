@@ -16,7 +16,6 @@
     </select>
     <div id="appearanceOutput"></div>
 
-    <script src="nations.js"></script>
     <script>
          // Ensure the DOM is fully parsed
     document.addEventListener('DOMContentLoaded', function() {
@@ -35,7 +34,7 @@
         // Event listener for when the user changes the selected option
         selectElement.addEventListener('change', function() {
             const selectedNation = this.options[this.selectedIndex].text;
-            console.log('Selected nation:', selectedNation); // Logging the selected nation name
+            //console.log('Selected nation:', selectedNation); // Logging the selected nation name
 
             // Assuming gender is determined elsewhere or is static
             const gender = 'male'; // Or dynamically determine gender
